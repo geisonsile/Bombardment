@@ -1,15 +1,20 @@
-# Game
+# Bombardment
 
-Clone do nível "Bombardment" do Stumble Guys
+Clone do nível "Bombardment" do jogo Stumble Guys
+
+# Game
+**Jogue agora em** https://geisonleite.itch.io/bombardment
+
+# Screenshots
 
 <p align="middle">
   <img src=".media/Bombardment1.png" width="49%" />
   <img src=".media/Bombardment2.png" width="49%" />
 </p>
 
-# Assets
+## Assets do jogo
 
-O Jogo contém os asssets da Asset Store da Unity:
+O Jogo contém os seguintes itens da Asset Store da Unity:
 
 - [**RPG Tiny Hero Duo PBR Polyart** _by Dungeon Mason_](https://assetstore.unity.com/packages/3d/characters/humanoids/rpg-tiny-hero-duo-pbr-polyart-225148)
 - [**Sailing Ships (14th/15th Century)** _by The Quantum Nexus_](https://assetstore.unity.com/packages/3d/vehicles/sea/sailing-ships-14th-15th-century-198426)

@@ -5,29 +5,37 @@ using UnityEngine;
 
 public class GameplayUiScript : MonoBehaviour {
 
-    private static readonly int SCORE_FACTOR = 10;
+    //private static readonly int SCORE_FACTOR = 10;
 
-    [SerializeField] private TextMeshProUGUI scoreLabel;
-    [SerializeField] private TextMeshProUGUI highestScoreLabel;
+    [SerializeField] private TextMeshProUGUI txtScore;
+    [SerializeField] private TextMeshProUGUI txtHighestScore;
 
-    // Start is called before the first frame update
+    
     void Start() {
-        scoreLabel.text = GetScoreString();
-        highestScoreLabel.text = GetHighestScoreString();
+        txtScore.text = GetScoreString();
+        txtHighestScore.text = GetHighestScoreString();
     }
 
-    // Update is called once per frame
+    
     void Update() {
-        scoreLabel.text = GetScoreString();
-        highestScoreLabel.text = GetHighestScoreString();
+        txtScore.text = GetScoreString();
+        txtHighestScore.text = GetHighestScoreString();
     }
 
     private string GetScoreString() {
-        return (GameManager.Instance.GetScore() * SCORE_FACTOR).ToString();
+        //return (GameManager.Instance.GetScore() * SCORE_FACTOR).ToString();
+        return (DisplayTime(GameManager.Instance.GetScore()));
     }
 
     private string GetHighestScoreString() {
-        return (GameManager.Instance.GetHighestScore() * SCORE_FACTOR).ToString();
+        //return (GameManager.Instance.GetHighestScore() * SCORE_FACTOR).ToString();
+        return (DisplayTime(GameManager.Instance.GetHighestScore()));
+    }
+
+    private string DisplayTime(float timeToDisplay) {
+        float minutes = Mathf.FloorToInt(timeToDisplay / 60);
+        float seconds = Mathf.FloorToInt(timeToDisplay % 60);
+        return(string.Format("{0:00}:{1:00}", minutes, seconds));
     }
 
 }

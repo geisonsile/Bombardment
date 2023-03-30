@@ -4,14 +4,11 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour {
-
-    // Singleton
+    
     public static GameManager Instance {get; private set;}
 
-    // Constants
     private static readonly string KEY_HIGHEST_SCORE = "HighestScore";
-
-    // API
+    
     public bool isGameOver {get; private set;}
     
     [Header("Audio")]
@@ -58,28 +55,22 @@ public class GameManager : MonoBehaviour {
 
     public void EndGame() {
         if(isGameOver) return;
-
-        // Set flag
+        
         isGameOver = true;
 
-        // Stop music
         musicPlayer.Stop();
-
-        // Play SFX
+        
         gameOverSfx.Play();
 
         // Save highest score
         PlayerPrefs.SetInt(KEY_HIGHEST_SCORE, GetHighestScore());
-
-        // Reload scene
+        
         StartCoroutine(ReloadScene(6));
     }
 
     private IEnumerator ReloadScene(float delay) {
-        // Wait
         yield return new WaitForSeconds(delay);
-
-        // Reload scene
+        
         string sceneName = SceneManager.GetActiveScene().name;
         SceneManager.LoadScene(sceneName);
     }
